@@ -39,5 +39,5 @@ jobs:
 
       - run: sh deployments/qa.sh
 
-      branches:
-        only: /feature_.*/
+    branches:
+      only: /feature_.*/
