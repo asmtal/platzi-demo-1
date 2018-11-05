@@ -1,0 +1,23 @@
+{
+  "builders": [
+    {
+      "type": "digitalocean",
+      "api_token": "YOUR API KEY",
+      "image": "coreos-stable",
+      "snapshot_name": "platzi-demo-snapshot",
+      "region": "nyc3",
+      "size": "512mb",
+      "ssh_username": "core"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "git clone https://github.com/sharkile/platzi-demo.git",
+        "cd platzi-demo",
+        "docker build -t platzi ."
+      ]
+    }
+  ]
+}
