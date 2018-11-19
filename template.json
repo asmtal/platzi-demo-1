@@ -1,10 +1,13 @@
 {
+  "variables": {
+    "build_number": "{{env `CIRCLECI_BUILD_NUM`}}"
+  }
   "builders": [
     {
       "type": "digitalocean",
       "api_token": "YOUR API KEY",
       "image": "coreos-stable",
-      "snapshot_name": "platzi-demo-snapshot",
+      "snapshot_name": "platzi-demo-snapshot-{{`build_number`}}",
       "region": "nyc3",
       "size": "512mb",
       "ssh_username": "core"
